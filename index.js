@@ -102,23 +102,33 @@ const products = [
 // You must change the condition at least twice and re-run the program
 // Show how output changes
 // Task 1.2 – flter + reduce Combination (Started!)
-const studentStats = [
-  { rollNum: 2123, name: "Zain", cousrse: "web & app dev", present: true },
-  { rollNum: 1204, nam: "Zaid", cousrse: "web & app dev", present: false },
-  { rollNum: 1222, name: "Ali", cousrse: "web & app dev", present: false },
-  { rollNum: 1302, name: "Moiz", cousrse: "Ai agents", present: true },
-  { rollNum: 10223, name: "Salman", cousrse: "web & app dev", present: true },
-  { rollNum: 90435, name: "Khizar", cousrse: "web & app dev", present: false },
-  { rollNum: 235, name: "Talal", cousrse: "Ai agents", present: true },
-];
-const AttendenceChecker = studentStats
-  .filter((item) => item.present !== false)
-  .reduce((acc, item) => [...acc, item], []);
-console.log(`Present StudentList:`, AttendenceChecker);
-const courseChecker = studentStats
-  .filter(
-    (course) => course.cousrse === "Ai agents" && course.present !== false,
-  )
-  .reduce((a, course) => [...a, course], []);
-console.log(`Check Course and Attendence:`, courseChecker);
+// const studentStats = [
+//   { rollNum: 2123, name: "Zain", cousrse: "web & app dev", present: true },
+//   { rollNum: 1204, nam: "Zaid", cousrse: "web & app dev", present: false },
+//   { rollNum: 1222, name: "Ali", cousrse: "web & app dev", present: false },
+//   { rollNum: 1302, name: "Moiz", cousrse: "Ai agents", present: true },
+//   { rollNum: 10223, name: "Salman", cousrse: "web & app dev", present: true },
+//   { rollNum: 90435, name: "Khizar", cousrse: "web & app dev", present: false },
+//   { rollNum: 235, name: "Talal", cousrse: "Ai agents", present: true },
+// ];
+// const AttendenceChecker = studentStats
+//   .filter((item) => item.present !== false)
+//   .reduce((acc, item) => [...acc, item], []);
+// console.log(`Present StudentList:`, AttendenceChecker);
+// const courseChecker = studentStats
+//   .filter(
+//     (course) => course.cousrse === "Ai agents" && course.present !== false,
+//   )
+//   .reduce((a, course) => [...a, course], []);
+// console.log(`Check Course and Attendence:`, courseChecker);
 // Task 1.2 – flter + reduce Combination (Completed!)
+
+// Task 1.3 – Custom Array Method Simulation (Hard)
+// Simulate the behavior of one array method ( map ,  filter , or  reduce ) using a normal loop.
+// Mandatory:
+// Your function must accept a callback
+// You must log when the callback is executed
+// Compare output with the real method
+
+// Task 1.3 – Custom Array Method Simulation (Started!)
+// Task 1.3 – Custom Array Method Simulation (Completed!)
