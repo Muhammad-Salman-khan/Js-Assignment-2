@@ -79,18 +79,17 @@ const products = [
 // console.log(Aftertax);
 
 // using reduce mathod
-const usingReduceMethod = products.reduce((acc, item, index) => {
-  console.log(
-    `${item.name} Price: ${item.price} - quantity: ${item.quantity} \n`,
-  );
+// const usingReduceMethod = products.reduce((acc, item, index) => {
+//   console.log(
+//     `${item.name} Price: ${item.price} - quantity: ${item.quantity} \n`,
+//   );
 
-  const AfterMaxket = {
-    name: item.name,
-    price: `$${(item.price * (1 + 0.5)).toFixed(2)}`,
-  };
-  acc.push(AfterMaxket);
-  return acc;
-}, []);
-console.log(usingReduceMethod);
-
+//   const AfterMaxket = {
+//     name: item.name,
+//     price: `$${(item.price * (1 + 0.5)).toFixed(2)}`,
+//   };
+//   acc.push(AfterMaxket);
+//   return acc;
+// }, []);
+// console.log(`using Reduce`, usingReduceMethod);
 // Task 1.1 – map vs forEach vs reduce (Behavior Study) (Completed!)
