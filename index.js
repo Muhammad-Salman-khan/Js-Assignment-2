@@ -63,6 +63,34 @@ const products = [
 //   };
 //   return aftertax;
 // });
-// console.log(addTaxsToProductMap);
+// console.log(`using map`,addTaxsToProductMap);
+
+// using forEach mathod
+// let Aftertax = [];
+// const usingForeach = products.forEach((e, i) => {
+//   console.log(`${e.name} Price: ${e.price}, Categories: ${e.category}`);
+//   return Aftertax.push({
+//     name: e.name,
+//     price: `$${(e.price * (1 + 0.2)).toFixed(2)}`,
+//     quantity: e.quantity - 5,
+//   });
+// });
+// console.log(`using for-each`, usingForeach);
+// console.log(Aftertax);
+
+// using reduce mathod
+const usingReduceMethod = products.reduce((acc, item, index) => {
+  console.log(
+    `${item.name} Price: ${item.price} - quantity: ${item.quantity} \n`,
+  );
+
+  const AfterMaxket = {
+    name: item.name,
+    price: `$${(item.price * (1 + 0.5)).toFixed(2)}`,
+  };
+  acc.push(AfterMaxket);
+  return acc;
+}, []);
+console.log(usingReduceMethod);
 
 // Task 1.1 – map vs forEach vs reduce (Behavior Study) (Completed!)
