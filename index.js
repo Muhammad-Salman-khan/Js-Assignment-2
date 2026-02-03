@@ -222,72 +222,97 @@ const products = [
 // Add one asynchronous operation and observe the diference.
 
 // Create multiple nested function calls that: (Started!)
-function syncFn1() {
-  console.log("Sync Func First -start");
-  syncFn2();
-  console.log("Sync Func First Ended");
-}
-function syncFn2() {
-  console.log("Sync Func Second Started");
-  syncFn3();
-  console.log("Sync Func Second Ended");
-}
-function syncFn3(z) {
-  console.log("Sync Func third Started");
-  syncFn4();
-  console.log("Sync third Ended");
-}
-function syncFn4() {
-  console.log("Sync Func forth -Started");
-}
-function AsyncFn1() {
-  console.log("Aysnc func First start");
-  AsyncFn2();
-  console.log("Async First Ended");
-}
-function AsyncFn2() {
-  console.log("Async Second Started");
-  AsyncFn3();
-  console.log("Async Second Ended");
-}
-function AsyncFn3() {
-  console.log("Async third Started");
-  setTimeout(() => console.log("Async third Ended"), 500);
-  AsyncFn4();
-}
-function AsyncFn4() {
-  console.log("Async forth Start");
-}
-syncFn1();
-AsyncFn1();
+// function syncFn1() {
+//   console.log("Sync Func First -start");
+//   syncFn2();
+//   console.log("Sync Func First Ended");
+// }
+// function syncFn2() {
+//   console.log("Sync Func Second Started");
+//   syncFn3();
+//   console.log("Sync Func Second Ended");
+// }
+// function syncFn3(z) {
+//   console.log("Sync Func third Started");
+//   syncFn4();
+//   console.log("Sync third Ended");
+// }
+// function syncFn4() {
+//   console.log("Sync Func forth -Started");
+// }
+// function AsyncFn1() {
+//   console.log("Aysnc func First start");
+//   AsyncFn2();
+//   console.log("Async First Ended");
+// }
+// function AsyncFn2() {
+//   console.log("Async Second Started");
+//   AsyncFn3();
+//   console.log("Async Second Ended");
+// }
+// function AsyncFn3() {
+//   console.log("Async third Started");
+//   setTimeout(() => console.log("Async third Ended"), 500);
+//   AsyncFn4();
+// }
+// function AsyncFn4() {
+//   console.log("Async forth Start");
+// }
+// syncFn1();
+// AsyncFn1();
 
-setTimeout(() => {
-  console.log(`
-    \n\n
-    The Exuction:
-Sync Func Second Started
-Sync Func third Started
-Sync Func forth -Started
-Sync third Ended
-Sync Func Second Ended
-Sync Func First Ended
-For Sync Functions function one Called First and endend back to back
-Aysnc func First -start
-Async Second Started
-Async third Started
-Async forth Start
-Async Second Ended
-Async First Ended
-The log Data i got  
-First -start
-Second Started
-third Started
-forth -Started
-third Ended
-Second Ended
-First Exist
-Async third Ended
-For ASync Functions function one Called FirstFunction first and the last was ended Third Ended Last `);
-}, 600);
+// setTimeout(() => {
+//   console.log(`
+//     \n\n
+//     The Exuction:
+// Sync Func Second Started
+// Sync Func third Started
+// Sync Func forth -Started
+// Sync third Ended
+// Sync Func Second Ended
+// Sync Func First Ended
+// For Sync Functions function one Called First and endend back to back
+// Aysnc func First -start
+// Async Second Started
+// Async third Started
+// Async forth Start
+// Async Second Ended
+// Async First Ended
+// The log Data i got
+// First -start
+// Second Started
+// third Started
+// forth -Started
+// third Ended
+// Second Ended
+// First Exist
+// Async third Ended
+// For ASync Functions function one Called FirstFunction first and the last was ended Third Ended Last `);
+// }, 600);
 
 // Create multiple nested function calls that: (Completed!)
+
+// Task 2.3 – Closure Proof
+// Create a function that:
+// Returns another function
+// Uses variables from the outer scope
+// Change the outer variables after creation and observe results.
+
+// Task 2.3 – Closure Proof(Start!)
+const CheckCount = () => {
+  let count = 0;
+  console.log(`counter initial value ${count}`);
+  return (e) => {
+    console.log(`counter inner value before:${count}, adding ${e} `);
+    console.log((count += e));
+    console.log(`counter inner value After adding ${e}, value:${count} `);
+  };
+};
+const meow = CheckCount();
+meow(2);
+meow(3);
+const meow2 = CheckCount();
+meow2(1);
+meow2(10);
+
+// Task 2.3 – Closure Proof(Ended!)
