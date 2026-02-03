@@ -129,6 +129,45 @@ const products = [
 // Your function must accept a callback
 // You must log when the callback is executed
 // Compare output with the real method
-
 // Task 1.3 – Custom Array Method Simulation (Started!)
+const studentStatsWithCustomMap = [
+  { rollNum: 2123, name: "Zain", cousrse: "web & app dev", present: true },
+  { rollNum: 1204, nam: "Zaid", cousrse: "web & app dev", present: false },
+  { rollNum: 1222, name: "Ali", cousrse: "web & app dev", present: false },
+  { rollNum: 1302, name: "Moiz", cousrse: "Ai agents", present: true },
+  { rollNum: 10223, name: "Salman", cousrse: "web & app dev", present: true },
+  { rollNum: 90435, name: "Khizar", cousrse: "web & app dev", present: false },
+  { rollNum: 235, name: "Talal", cousrse: "Ai agents", present: true },
+];
+const numbersItrationCheck = [1, 2, 3, 4];
+const customMap = (array, mapCallBack) => {
+  const result = [];
+  // Checking if it's array or not and also checking the length of it
+  if (!Array.isArray(array) || !array.length) {
+    // if it isn't array or don't any length like someting inside it return early!!
+    return `array is empty []`;
+  } else {
+    for (let i = 0; i < array.length; i++) {
+      // itrating current index with the value!
+      console.log(`callback itrating on index:${i} value`, array[i]);
+      //----------------current object,itration, and array
+      result.push(mapCallBack(array[i], i, array));
+    }
+    console.log(`itration is completed retuing the result`);
+    return result;
+  }
+};
+
+// const myResults = customMap(studentStatsWithCustomMap, (states) => states);
+const myResults2 = customMap(numbersItrationCheck, (num) => num * 2);
+// console.log(`Ans Value \n`, myResults);
+console.log(`Mutated Value \n`, myResults2);
+const mapMethodResult = numbersItrationCheck.map((item) => item * 2);
+console.log(mapMethodResult);
+console.log(
+  `Match:`,
+  JSON.stringify(myResults2) === JSON.stringify(mapMethodResult),
+);
+console.log(`Match:`, myResults2 === mapMethodResult);
+
 // Task 1.3 – Custom Array Method Simulation (Completed!)
