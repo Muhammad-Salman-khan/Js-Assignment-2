@@ -335,15 +335,31 @@ const products = [
 // Log results and observe behavior.
 
 // Section 3: Destructuring, Rest & Spread Operators (Start!)
-const userProfile = {
-  name: "Salman",
-  // age: 504,
-  course: "web & app dev",
-  // Present: true,
-};
-const { name, age = "Not Avalibe", course, Present = "maybe" } = userProfile;
-console.log(
-  `Name:${name}, age: ${age}, course: ${course}, Present: ${Present}`,
-);
+// const userProfile = {
+//   name: "Salman",
+//   // age: 504,
+//   course: "web & app dev",
+//   // Present: true,
+// };
+// const { name, age = "Not Avalibe", course, Present = "maybe" } = userProfile;
+// console.log(
+//   `Name:${name}, age: ${age}, course: ${course}, Present: ${Present}`,
+// );
 
 // Section 3: Destructuring, Rest & Spread Operators (End!)
+
+// Task 3.2 – Rest Operator in Functions
+// Write a function that:
+// Accepts an unknown number of arguments
+// Processes them meaningfully (not just logging)
+// Demonstrate behavior with diferent argument counts.
+// Task 3.2 – Rest Operator in Functions (Start!)
+// const usingRest = (value, ...num) => {
+//   const double = num.map((e) => e * value);
+//   return double;
+// };
+// console.log(usingRest(2, 2, 4, 5, 6, 7));
+// console.log(usingRest(12, 1));
+// console.log(usingRest(5));
+
+// Task 3.2 – Rest Operator in Functions (End!)
