@@ -182,35 +182,76 @@ const products = [
 // Log what runs, what fails, and in which orde
 // Task 2.1 – Hoisting Reality Check (Started!)
 
-console.log(
-  `1 Calling function before delcaring`,
-  canIbeCalled("Yess becuase function have Hoisting"),
-);
-function canIbeCalled(e) {
-  return e;
-}
-console.log(canIbeCalled("Yess becuase function have Hoisting"));
-console.log(`2 var variable before delcaring ${varVariable}`);
-var varVariable;
-console.log(`3 var variable after delcaring ${varVariable}`);
-try {
-  console.log(` let variable before delcaring ${helloFromTryCatch}`);
-  let helloFromTryCatch;
-  console.log(` let variable after delcaring`, helloFromTryCatch);
-} catch (e) {
-  console.log(
-    `Failed: let variable didn't work becuase it called before delcaring and it will say ReferenceError ${e.name}`,
-    e,
-  );
-}
-try {
-  console.log(`const variable before delcaring ${RealityHits}`);
-  const RealityHits = "Yes it does";
-  console.log(`const variable after delcaring ${RealityHits}`);
-} catch (e) {
-  console.log(
-    `Failed: const variable didn't work becuase it called before delcaring becuase its a ReferenceError: ${e.name} `,
-    e,
-  );
-}
+// console.log(
+//   `1 Calling function before delcaring`,
+//   canIbeCalled("Yess becuase function have Hoisting"),
+// );
+// function canIbeCalled(e) {
+//   return e;
+// }
+// console.log(canIbeCalled("Yess becuase function have Hoisting"));
+// console.log(`2 var variable before delcaring ${varVariable}`);
+// var varVariable;
+// console.log(`3 var variable after delcaring ${varVariable}`);
+// try {
+//   console.log(` let variable before delcaring ${helloFromTryCatch}`);
+//   let helloFromTryCatch;
+//   console.log(` let variable after delcaring`, helloFromTryCatch);
+// } catch (e) {
+//   console.log(
+//     `Failed: let variable didn't work becuase it called before delcaring and it will say ReferenceError ${e.name}`,
+//     e,
+//   );
+// }
+// try {
+//   console.log(`const variable before delcaring ${RealityHits}`);
+//   const RealityHits = "Yes it does";
+//   console.log(`const variable after delcaring ${RealityHits}`);
+// } catch (e) {
+//   console.log(
+//     `Failed: const variable didn't work becuase it called before delcaring becuase its a ReferenceError: ${e.name} `,
+//     e,
+//   );
+// }
 // Task 2.1 – Hoisting Reality Check (Completed!)
+
+// Task 2.2 – Call Stack Observation
+// Create multiple nested function calls that:
+// Log entry and exit points
+// Clearly show execution order
+// Add one asynchronous operation and observe the diference.
+
+// Create multiple nested function calls that: (Started!)
+function Fn1() {
+  console.log("First -start");
+  Fn2();
+  console.log("First Ended");
+}
+function Fn2() {
+  console.log("Second Started");
+  Fn3();
+  console.log("Second Ended");
+}
+function Fn3(z) {
+  console.log("third Started");
+  Fn4();
+  console.log("third Ended");
+}
+function Fn4(z2) {
+  console.log("forth -Started");
+  return "forth Ended";
+}
+console.log(Fn1());
+console.log(`The log Data i got  
+First -start
+Second Started
+third Started
+forth -Started
+third Ended
+Second Ended
+First Exist
+undefined
+The last one is executed is First Function
+  `);
+
+// Create multiple nested function calls that: (Completed!)
