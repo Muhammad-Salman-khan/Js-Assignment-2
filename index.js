@@ -299,40 +299,51 @@ const products = [
 // Change the outer variables after creation and observe results.
 
 // Task 2.3 – Closure Proof(Start!)
-const CheckCount = () => {
-  let value = 0;
-  console.log(`counter initial value ${value}`);
-  return {
-    add: (e) => {
-      console.log(`counter inner value before:${value}, adding ${e} `);
-      console.log((value += e));
-      console.log(`counter inner value After adding ${e}, value:${value} `);
-    },
-    sub: (e) => {
-      console.log(`counter inner value before:${value}, sub ${e} `);
-      console.log((value -= e));
-      console.log(`counter inner value After sub ${e}, value:${value} `);
-    },
-    Multiply: (e) => {
-      console.log(`counter inner value before:${value} multiple ${e} `);
-      console.log(value * e);
-      console.log(`counter inner value After Multiply By ${e} value:${value} `);
-    },
-  };
-};
-const Fn1 = CheckCount();
-Fn1.add(2);
-Fn1.sub(3);
-const Fn2 = CheckCount();
-Fn2.add(5);
-Fn2.Multiply(10);
-
+// const CheckCount = () => {
+//   let value = 0;
+//   console.log(`counter initial value ${value}`);
+//   return {
+//     add: (e) => {
+//       console.log(`counter inner value before:${value}, adding ${e} `);
+//       console.log((value += e));
+//       console.log(`counter inner value After adding ${e}, value:${value} `);
+//     },
+//     sub: (e) => {
+//       console.log(`counter inner value before:${value}, sub ${e} `);
+//       console.log((value -= e));
+//       console.log(`counter inner value After sub ${e}, value:${value} `);
+//     },
+//     Multiply: (e) => {
+//       console.log(`counter inner value before:${value} multiple ${e} `);
+//       console.log(value * e);
+//       console.log(`counter inner value After Multiply By ${e} value:${value} `);
+//     },
+//   };
+// };
+// const Fn1 = CheckCount();
+// Fn1.add(2);
+// Fn1.sub(3);
+// const Fn2 = CheckCount();
+// Fn2.add(5);
+// Fn2.Multiply(10);
 // Task 2.3 – Closure Proof(Ended!)
+
 // Task 3.1 – Destructuring with Defaults
 // Create an object and:
 // Destructure properties with default values
 // Intentionally omit some properties
 // Log results and observe behavior.
+
 // Section 3: Destructuring, Rest & Spread Operators (Start!)
+const userProfile = {
+  name: "Salman",
+  // age: 504,
+  course: "web & app dev",
+  // Present: true,
+};
+const { name, age = "Not Avalibe", course, Present = "maybe" } = userProfile;
+console.log(
+  `Name:${name}, age: ${age}, course: ${course}, Present: ${Present}`,
+);
 
 // Section 3: Destructuring, Rest & Spread Operators (End!)
