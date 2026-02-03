@@ -182,21 +182,24 @@ const products = [
 // Log what runs, what fails, and in which orde
 // Task 2.1 – Hoisting Reality Check (Started!)
 
-console.log(canIbeCalled("Yess becuase function have Hoisting"));
+console.log(
+  `1 Calling function before delcaring`,
+  canIbeCalled("Yess becuase function have Hoisting"),
+);
 function canIbeCalled(e) {
   return e;
 }
 console.log(canIbeCalled("Yess becuase function have Hoisting"));
-console.log(`var variable before delcaring ${varVariable}`);
+console.log(`2 var variable before delcaring ${varVariable}`);
 var varVariable;
-console.log(`var variable after delcaring ${varVariable}`);
+console.log(`3 var variable after delcaring ${varVariable}`);
 try {
-  console.log(`let variable before delcaring ${helloFromTryCatch}`);
+  console.log(` let variable before delcaring ${helloFromTryCatch}`);
   let helloFromTryCatch;
-  console.log(`let variable after delcaring`, helloFromTryCatch);
+  console.log(` let variable after delcaring`, helloFromTryCatch);
 } catch (e) {
   console.log(
-    `let variable didn't work becuase it called before delcaring and it will say ReferenceError`,
+    `Failed: let variable didn't work becuase it called before delcaring and it will say ReferenceError ${e.name}`,
     e,
   );
 }
@@ -206,7 +209,7 @@ try {
   console.log(`const variable after delcaring ${RealityHits}`);
 } catch (e) {
   console.log(
-    `const variable didn't work becuase it called before delcaring becuase its a ReferenceError: `,
+    `Failed: const variable didn't work becuase it called before delcaring becuase its a ReferenceError: ${e.name} `,
     e,
   );
 }
