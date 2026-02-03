@@ -328,3 +328,11 @@ Fn2.add(5);
 Fn2.Multiply(10);
 
 // Task 2.3 – Closure Proof(Ended!)
+// Task 3.1 – Destructuring with Defaults
+// Create an object and:
+// Destructure properties with default values
+// Intentionally omit some properties
+// Log results and observe behavior.
+// Section 3: Destructuring, Rest & Spread Operators (Start!)
+
+// Section 3: Destructuring, Rest & Spread Operators (End!)
