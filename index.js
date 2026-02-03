@@ -300,19 +300,31 @@ const products = [
 
 // Task 2.3 – Closure Proof(Start!)
 const CheckCount = () => {
-  let count = 0;
-  console.log(`counter initial value ${count}`);
-  return (e) => {
-    console.log(`counter inner value before:${count}, adding ${e} `);
-    console.log((count += e));
-    console.log(`counter inner value After adding ${e}, value:${count} `);
+  let value = 0;
+  console.log(`counter initial value ${value}`);
+  return {
+    add: (e) => {
+      console.log(`counter inner value before:${value}, adding ${e} `);
+      console.log((value += e));
+      console.log(`counter inner value After adding ${e}, value:${value} `);
+    },
+    sub: (e) => {
+      console.log(`counter inner value before:${value}, sub ${e} `);
+      console.log((value -= e));
+      console.log(`counter inner value After sub ${e}, value:${value} `);
+    },
+    Multiply: (e) => {
+      console.log(`counter inner value before:${value} multiple ${e} `);
+      console.log(value * e);
+      console.log(`counter inner value After Multiply By ${e} value:${value} `);
+    },
   };
 };
-const meow = CheckCount();
-meow(2);
-meow(3);
-const meow2 = CheckCount();
-meow2(1);
-meow2(10);
+const Fn1 = CheckCount();
+Fn1.add(2);
+Fn1.sub(3);
+const Fn2 = CheckCount();
+Fn2.add(5);
+Fn2.Multiply(10);
 
 // Task 2.3 – Closure Proof(Ended!)
