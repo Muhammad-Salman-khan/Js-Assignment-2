@@ -363,3 +363,37 @@ const products = [
 // console.log(usingRest(5));
 
 // Task 3.2 – Rest Operator in Functions (End!)
+
+// Task 3.3 – Spread Operator & References (Important)
+// Demonstrate the diference between:
+// Shallow copy using spread
+// Direct reference assignment
+// Modify nested values and observe efects.
+
+// Task 3.3 – Spread Operator & References (Important)(Start!)
+const TypeScriptBio = {
+  name: "TypeScript",
+  known: {
+    bestFor: "Type Safty",
+  },
+  usedBy: {
+    Downloads: 10000000000,
+  },
+};
+
+const fakeCopy = { ...TypeScriptBio };
+const directRef = TypeScriptBio;
+const HardCopy = structuredClone(TypeScriptBio);
+
+console.log(
+  `Fake Copy Ref using spreed Operator before Changing original`,
+  fakeCopy,
+);
+console.log(`direct Reference variable before Changing original`, directRef);
+TypeScriptBio.usedBy.Downloads = "100 M";
+console.log(`Fake Copy after Changing original Ref`, fakeCopy.usedBy);
+console.log(`HardCopy Ref after Changing original Ref`, HardCopy.usedBy);
+console.log(`direct Reference after Changing original Ref `, directRef.usedBy);
+console.log(`original Ref `, TypeScriptBio);
+
+// Task 3.3 – Spread Operator & References (Important)(Completed!)
