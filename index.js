@@ -222,27 +222,63 @@ const products = [
 // Add one asynchronous operation and observe the diference.
 
 // Create multiple nested function calls that: (Started!)
-function Fn1() {
-  console.log("First -start");
-  Fn2();
-  console.log("First Ended");
+function syncFn1() {
+  console.log("Sync Func First -start");
+  syncFn2();
+  console.log("Sync Func First Ended");
 }
-function Fn2() {
-  console.log("Second Started");
-  Fn3();
-  console.log("Second Ended");
+function syncFn2() {
+  console.log("Sync Func Second Started");
+  syncFn3();
+  console.log("Sync Func Second Ended");
 }
-function Fn3(z) {
-  console.log("third Started");
-  Fn4();
-  console.log("third Ended");
+function syncFn3(z) {
+  console.log("Sync Func third Started");
+  syncFn4();
+  console.log("Sync third Ended");
 }
-function Fn4(z2) {
-  console.log("forth -Started");
-  return "forth Ended";
+function syncFn4() {
+  console.log("Sync Func forth -Started");
 }
-console.log(Fn1());
-console.log(`The log Data i got  
+function AsyncFn1() {
+  console.log("Aysnc func First start");
+  AsyncFn2();
+  console.log("Async First Ended");
+}
+function AsyncFn2() {
+  console.log("Async Second Started");
+  AsyncFn3();
+  console.log("Async Second Ended");
+}
+function AsyncFn3() {
+  console.log("Async third Started");
+  setTimeout(() => console.log("Async third Ended"), 500);
+  AsyncFn4();
+}
+function AsyncFn4() {
+  console.log("Async forth Start");
+}
+syncFn1();
+AsyncFn1();
+
+setTimeout(() => {
+  console.log(`
+    \n\n
+    The Exuction:
+Sync Func Second Started
+Sync Func third Started
+Sync Func forth -Started
+Sync third Ended
+Sync Func Second Ended
+Sync Func First Ended
+For Sync Functions function one Called First and endend back to back
+Aysnc func First -start
+Async Second Started
+Async third Started
+Async forth Start
+Async Second Ended
+Async First Ended
+The log Data i got  
 First -start
 Second Started
 third Started
@@ -250,8 +286,8 @@ forth -Started
 third Ended
 Second Ended
 First Exist
-undefined
-The last one is executed is First Function
-  `);
+Async third Ended
+For ASync Functions function one Called FirstFunction first and the last was ended Third Ended Last `);
+}, 600);
 
 // Create multiple nested function calls that: (Completed!)
