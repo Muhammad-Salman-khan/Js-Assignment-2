@@ -494,7 +494,7 @@ const users = [
 ];
 const DataProcessor = (e) => {
   console.log(`Starting the process,`, e);
-  if (!Array.isArray(e) || !e.length) return "its not array";
+  if (!Array.isArray(e) || !e.length) return "its not an array";
   return (e) => {
     console.log("starting the process");
     const cleanData = e
