@@ -371,29 +371,148 @@ const products = [
 // Modify nested values and observe efects.
 
 // Task 3.3 – Spread Operator & References (Important)(Start!)
-const TypeScriptBio = {
-  name: "TypeScript",
-  known: {
-    bestFor: "Type Safty",
-  },
-  usedBy: {
-    Downloads: 10000000000,
-  },
-};
+// const TypeScriptBio = {
+//   name: "TypeScript",
+//   known: {
+//     bestFor: "Type Safty",
+//   },
+//   usedBy: {
+//     Downloads: 10000000000,
+//   },
+// };
 
-const fakeCopy = { ...TypeScriptBio };
-const directRef = TypeScriptBio;
-const HardCopy = structuredClone(TypeScriptBio);
+// const fakeCopy = { ...TypeScriptBio };
+// const directRef = TypeScriptBio;
+// const HardCopy = structuredClone(TypeScriptBio);
 
-console.log(
-  `Fake Copy Ref using spreed Operator before Changing original`,
-  fakeCopy,
-);
-console.log(`direct Reference variable before Changing original`, directRef);
-TypeScriptBio.usedBy.Downloads = "100 M";
-console.log(`Fake Copy after Changing original Ref`, fakeCopy.usedBy);
-console.log(`HardCopy Ref after Changing original Ref`, HardCopy.usedBy);
-console.log(`direct Reference after Changing original Ref `, directRef.usedBy);
-console.log(`original Ref `, TypeScriptBio);
+// console.log(
+//   `Fake Copy Ref using spreed Operator before Changing original`,
+//   fakeCopy,
+// );
+// console.log(`direct Reference variable before Changing original`, directRef);
+// TypeScriptBio.usedBy.Downloads = "100 M";
+// console.log(`Fake Copy after Changing original Ref`, fakeCopy.usedBy);
+// console.log(`HardCopy Ref after Changing original Ref`, HardCopy.usedBy);
+// console.log(`direct Reference after Changing original Ref `, directRef.usedBy);
+// console.log(`original Ref `, TypeScriptBio);
 
 // Task 3.3 – Spread Operator & References (Important)(Completed!)
+
+// Final Project (Medium → Hard)
+// JavaScript Data Processor App
+// Build a small JavaScript data-processing app that:
+// Accepts a dataset (array of objects you design)
+// Uses map, flter, reduce together
+// Applies destructuring and spread for transformations
+// Demonstrates at least one closure
+// Logs execution fow clearly
+// Final Project (Medium → Hard) (Start!)
+const users = [
+  {
+    id: 1,
+    name: "Alice Morgan",
+    email: "alice.morgan@example.com",
+    active: true,
+    loyalCustomer: false,
+    lastLogin: "2024-01-20",
+    address: {
+      city: "Berlin",
+      localAddress: "Kreuzberg 21A",
+    },
+  },
+  {
+    id: 2,
+    name: "Bruno Silva",
+    email: "bruno.silva@example.com",
+    active: false,
+    loyalCustomer: false,
+    lastLogin: "2025-4-20",
+    address: {
+      city: "Lisbon",
+      localAddress: "Rua Augusta 99",
+    },
+  },
+  {
+    id: 3,
+    name: "Carla Rossi",
+    email: "carla.rossi@example.com",
+    active: true,
+    loyalCustomer: false,
+    lastLogin: "2025-2-12",
+    address: {
+      city: "Rome",
+      localAddress: "Via Veneto 12",
+    },
+  },
+  {
+    id: 4,
+    name: "Daniel Novak",
+    email: "daniel.novak@example.com",
+    active: true,
+    loyalCustomer: false,
+    lastLogin: "2025-06-25",
+    address: {
+      city: "Prague",
+      localAddress: "Old Town Square 3",
+    },
+  },
+  {
+    id: 5,
+    name: "Eva Müller",
+    email: "eva.muller@example.com",
+    active: false,
+    loyalCustomer: false,
+    lastLogin: "2025-7-3",
+    address: {
+      city: "Munich",
+      localAddress: "Marienplatz 7",
+    },
+  },
+  {
+    id: 6,
+    name: "Felix Laurent",
+    email: "felix.laurent@example.com",
+    active: true,
+    loyalCustomer: false,
+    lastLogin: "2025-01-10",
+    address: {
+      city: "Paris",
+      localAddress: "Rue de Rivoli 45",
+    },
+  },
+  {
+    id: 7,
+    name: "Hanna Kowalski",
+    email: "hanna.kowalski@example.com",
+    active: false,
+    loyalCustomer: false,
+    lastLogin: "2025-01-20",
+    address: {
+      city: "Warsaw",
+      localAddress: "Nowy Świat 18",
+    },
+  },
+];
+const DataProcessor = (e) => {
+  console.log(`Starting the process,`, e);
+  if (!Array.isArray(e) || !e.length) return "its not array";
+  return (e) => {
+    console.log("starting the process");
+    const cleanData = e
+      .filter(({ active }) => active !== false)
+      .map((users) => ({ ...users, loyalCustomer: true }))
+      .reduce((acc, { name, email }) => {
+        acc.push(`Our loyal coustomers:Name: ${name}  email: ${email}`);
+        return acc;
+      }, []);
+    return cleanData;
+  };
+};
+const checData = DataProcessor(users);
+console.log(checData(users));
+
+// Final Project (Medium → Hard) (End!)
+// Experiment 1 Dry Run the idea
+// console.log(`my thinking is like that first i make a nested arrray of objec data related to userSchema and than i will pass it inside function inside it i will filter it by some boolean value and if those peoples than map it and make there state to do something else like change values immutabile way and than use Reduce to get the data in array and return
+// this is what i got from ai for dry running: It’s 70% architecturally correct, but 30% conceptually immature around reduce and purpose. without code I was giving my dry run plan and ask for make tweaks in it and correct me so it can make metal mode for me.
+//  `);
