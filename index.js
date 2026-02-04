@@ -517,4 +517,11 @@ console.log(checData(users));
 // this is what i got from ai for dry running: It’s 70% architecturally correct, but 30% conceptually immature around reduce and purpose. without code I was giving my dry run plan and ask for make tweaks in it and correct me so it can make metal mode for me.
 //  `);
 // Experiment 2 Implementation and Eroors
-console.log(`I created a  dataSet and `);
+console.log(
+  `I created the dataset and created a function passed a param inside it at first draft.I filter the param based on active field and with the help of map i change the field loyalCustomer to  true data immutability and than use reduce Mathod to call there name with email and present them in array`,
+);
+// Experiment 3 Validation and understanding
+console.log(
+  `I when i try to run it didn't work becuase it was not showing any sign coz i forgot to return the value  and i didn't created the closure so i created the closure and return the data and it worked and than i added some validation if someone passed  empty array or 
+  something which isnt array it will early return else it will work `,
+);
