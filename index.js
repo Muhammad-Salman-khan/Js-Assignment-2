@@ -512,10 +512,10 @@ const checData = DataProcessor(users);
 console.log(checData(users));
 
 // Final Project (Medium → Hard) (End!)
+
 // Experiment 1 Dry Run the idea
-// console.log(`my thinking is like that first i make a nested arrray of objec data related to userSchema and than i will pass it inside function inside it i will filter it by some boolean value and if those peoples than map it and make there state to do something else like change values immutabile way and than use Reduce to get the data in array and return
-// this is what i got from ai for dry running: It’s 70% architecturally correct, but 30% conceptually immature around reduce and purpose. without code I was giving my dry run plan and ask for make tweaks in it and correct me so it can make metal mode for me.
-//  `);
+console.log(`my thinking is like that first i make a nested arrray of objec data related to userSchema and than i will pass it inside function inside it i will filter it by some boolean value and if those peoples than map it and make there state to do something else like change values immutabile way and than use Reduce to get the data in array and return
+this is what i got from ai for dry running: It’s 70% architecturally correct, but 30% conceptually immature around reduce and purpose. without code I was giving my dry run plan and ask for make tweaks in it and correct me so it can make metal mode for me. `);
 // Experiment 2 Implementation and Eroors
 console.log(
   `I created the dataset and created a function passed a param inside it at first draft.I filter the param based on active field and with the help of map i change the field loyalCustomer to  true data immutability and than use reduce Mathod to call there name with email and present them in array`,
