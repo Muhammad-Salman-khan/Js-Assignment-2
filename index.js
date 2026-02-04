@@ -53,45 +53,44 @@ const products = [
 ];
 
 // First using map adding tax  2%
-// const addTaxsToProductMap = products.map((product, i) => {
-//   console.log(
-//     `before tax id:${i} ${product.name} - Price: ${product.price} - Product Quantity: ${product.quantity}`,
-//   );
-//   const aftertax = {
-//     Name: product.name,
-//     PriceAfterTax: (product.price * (1 + 0.2)).toFixed(2),
-//   };
-//   return aftertax;
-// });
-// console.log(`using map`,addTaxsToProductMap);
+const addTaxsToProductMap = products.map((product, i) => {
+  console.log(
+    `before tax id:${i} ${product.name} - Price: ${product.price} - Product Quantity: ${product.quantity}`,
+  );
+  const aftertax = {
+    Name: product.name,
+    PriceAfterTax: (product.price * (1 + 0.2)).toFixed(2),
+  };
+  return aftertax;
+});
+console.log(`using map`, addTaxsToProductMap);
 
 // using forEach mathod
-// let Aftertax = [];
-// const usingForeach = products.forEach((e, i) => {
-//   console.log(`${e.name} Price: ${e.price}, Categories: ${e.category}`);
-//   return Aftertax.push({
-//     name: e.name,
-//     price: `$${(e.price * (1 + 0.2)).toFixed(2)}`,
-//     quantity: e.quantity - 5,
-//   });
-// });
-// console.log(`using for-each`, usingForeach);
-// console.log(Aftertax);
+let Aftertax = [];
+const usingForeach = products.forEach((e, i) => {
+  console.log(`${e.name} Price: ${e.price}, Categories: ${e.category}`);
+  return Aftertax.push({
+    name: e.name,
+    price: `$${(e.price * (1 + 0.2)).toFixed(2)}`,
+    quantity: e.quantity - 5,
+  });
+});
+console.log(`using for-each`, usingForeach);
+console.log(Aftertax);
 
 // using reduce mathod
-// const usingReduceMethod = products.reduce((acc, item, index) => {
-//   console.log(
-//     `${item.name} Price: ${item.price} - quantity: ${item.quantity} \n`,
-//   );
-
-//   const AfterMaxket = {
-//     name: item.name,
-//     price: `$${(item.price * (1 + 0.5)).toFixed(2)}`,
-//   };
-//   acc.push(AfterMaxket);
-//   return acc;
-// }, []);
-// console.log(`using Reduce`, usingReduceMethod);
+const usingReduceMethod = products.reduce((acc, item, index) => {
+  console.log(
+    `${item.name} Price: ${item.price} - quantity: ${item.quantity} \n`,
+  );
+  const AfterMaxket = {
+    name: item.name,
+    price: `$${(item.price * (1 + 0.5)).toFixed(2)}`,
+  };
+  acc.push(AfterMaxket);
+  return acc;
+}, []);
+console.log(`using Reduce`, usingReduceMethod);
 // Task 1.1 – map vs forEach vs reduce (Behavior Study) (Completed!)
 
 // Task 1.2 – flter + reduce Combination
@@ -102,25 +101,25 @@ const products = [
 // You must change the condition at least twice and re-run the program
 // Show how output changes
 // Task 1.2 – flter + reduce Combination (Started!)
-// const studentStats = [
-//   { rollNum: 2123, name: "Zain", cousrse: "web & app dev", present: true },
-//   { rollNum: 1204, nam: "Zaid", cousrse: "web & app dev", present: false },
-//   { rollNum: 1222, name: "Ali", cousrse: "web & app dev", present: false },
-//   { rollNum: 1302, name: "Moiz", cousrse: "Ai agents", present: true },
-//   { rollNum: 10223, name: "Salman", cousrse: "web & app dev", present: true },
-//   { rollNum: 90435, name: "Khizar", cousrse: "web & app dev", present: false },
-//   { rollNum: 235, name: "Talal", cousrse: "Ai agents", present: true },
-// ];
-// const AttendenceChecker = studentStats
-//   .filter((item) => item.present !== false)
-//   .reduce((acc, item) => [...acc, item], []);
-// console.log(`Present StudentList:`, AttendenceChecker);
-// const courseChecker = studentStats
-//   .filter(
-//     (course) => course.cousrse === "Ai agents" && course.present !== false,
-//   )
-//   .reduce((a, course) => [...a, course], []);
-// console.log(`Check Course and Attendence:`, courseChecker);
+const studentStats = [
+  { rollNum: 2123, name: "Zain", cousrse: "web & app dev", present: true },
+  { rollNum: 1204, nam: "Zaid", cousrse: "web & app dev", present: false },
+  { rollNum: 1222, name: "Ali", cousrse: "web & app dev", present: false },
+  { rollNum: 1302, name: "Moiz", cousrse: "Ai agents", present: true },
+  { rollNum: 10223, name: "Salman", cousrse: "web & app dev", present: true },
+  { rollNum: 90435, name: "Khizar", cousrse: "web & app dev", present: false },
+  { rollNum: 235, name: "Talal", cousrse: "Ai agents", present: true },
+];
+const AttendenceChecker = studentStats
+  .filter((item) => item.present !== false)
+  .reduce((acc, item) => [...acc, item], []);
+console.log(`Present StudentList:`, AttendenceChecker);
+const courseChecker = studentStats
+  .filter(
+    (course) => course.cousrse === "Ai agents" && course.present !== false,
+  )
+  .reduce((a, course) => [...a, course], []);
+console.log(`Check Course and Attendence:`, courseChecker);
 // Task 1.2 – flter + reduce Combination (Completed!)
 
 // Task 1.3 – Custom Array Method Simulation (Hard)
@@ -130,45 +129,45 @@ const products = [
 // You must log when the callback is executed
 // Compare output with the real method
 // Task 1.3 – Custom Array Method Simulation (Started!)
-// const studentStatsWithCustomMap = [
-//   { rollNum: 2123, name: "Zain", cousrse: "web & app dev", present: true },
-//   { rollNum: 1204, nam: "Zaid", cousrse: "web & app dev", present: false },
-//   { rollNum: 1222, name: "Ali", cousrse: "web & app dev", present: false },
-//   { rollNum: 1302, name: "Moiz", cousrse: "Ai agents", present: true },
-//   { rollNum: 10223, name: "Salman", cousrse: "web & app dev", present: true },
-//   { rollNum: 90435, name: "Khizar", cousrse: "web & app dev", present: false },
-//   { rollNum: 235, name: "Talal", cousrse: "Ai agents", present: true },
-// ];
-// const numbersItrationCheck = [1, 2, 3, 4];
-// const customMap = (array, mapCallBack) => {
-//   const result = [];
-//   // Checking if it's array or not and also checking the length of it
-//   if (!Array.isArray(array) || !array.length) {
-//     // if it isn't array or don't any length like someting inside it return early!!
-//     return `array is empty []`;
-//   } else {
-//     for (let i = 0; i < array.length; i++) {
-//       // itrating current index with the value!
-//       console.log(`callback itrating on index:${i} value`, array[i]);
-//       //----------------current object,itration, and array
-//       result.push(mapCallBack(array[i], i, array));
-//     }
-//     console.log(`itration is completed retuing the result`);
-//     return result;
-//   }
-// };
+const studentStatsWithCustomMap = [
+  { rollNum: 2123, name: "Zain", cousrse: "web & app dev", present: true },
+  { rollNum: 1204, nam: "Zaid", cousrse: "web & app dev", present: false },
+  { rollNum: 1222, name: "Ali", cousrse: "web & app dev", present: false },
+  { rollNum: 1302, name: "Moiz", cousrse: "Ai agents", present: true },
+  { rollNum: 10223, name: "Salman", cousrse: "web & app dev", present: true },
+  { rollNum: 90435, name: "Khizar", cousrse: "web & app dev", present: false },
+  { rollNum: 235, name: "Talal", cousrse: "Ai agents", present: true },
+];
+const numbersItrationCheck = [1, 2, 3, 4];
+const customMap = (array, mapCallBack) => {
+  const result = [];
+  // Checking if it's array or not and also checking the length of it
+  if (!Array.isArray(array) || !array.length) {
+    // if it isn't array or don't any length like someting inside it return early!!
+    return `array is empty []`;
+  } else {
+    for (let i = 0; i < array.length; i++) {
+      // itrating current index with the value!
+      console.log(`callback itrating on index:${i} value`, array[i]);
+      //----------------current object,itration, and array
+      result.push(mapCallBack(array[i], i, array));
+    }
+    console.log(`itration is completed retuing the result`);
+    return result;
+  }
+};
 
-// const myResults = customMap(studentStatsWithCustomMap, (states) => states);
-// const myResults2 = customMap(numbersItrationCheck, (num) => num * 2);
-// console.log(`Ans Value \n`, myResults);
-// console.log(`Mutated Value \n`, myResults2);
-// const mapMethodResult = numbersItrationCheck.map((item) => item * 2);
-// console.log(mapMethodResult);
-// console.log(
-//   `Match:`,
-//   JSON.stringify(myResults2) === JSON.stringify(mapMethodResult),
-// );
-// console.log(`Match:`, myResults2 === mapMethodResult);
+const myResults = customMap(studentStatsWithCustomMap, (states) => states);
+const myResults2 = customMap(numbersItrationCheck, (num) => num * 2);
+console.log(`Ans Value \n`, myResults);
+console.log(`Mutated Value \n`, myResults2);
+const mapMethodResult = numbersItrationCheck.map((item) => item * 2);
+console.log(mapMethodResult);
+console.log(
+  `Match:`,
+  JSON.stringify(myResults2) === JSON.stringify(mapMethodResult),
+);
+console.log(`Match:`, myResults2 === mapMethodResult);
 
 // Task 1.3 – Custom Array Method Simulation (Completed!)
 
@@ -182,37 +181,37 @@ const products = [
 // Log what runs, what fails, and in which orde
 // Task 2.1 – Hoisting Reality Check (Started!)
 
-// console.log(
-//   `1 Calling function before delcaring`,
-//   canIbeCalled("Yess becuase function have Hoisting"),
-// );
-// function canIbeCalled(e) {
-//   return e;
-// }
-// console.log(canIbeCalled("Yess becuase function have Hoisting"));
-// console.log(`2 var variable before delcaring ${varVariable}`);
-// var varVariable;
-// console.log(`3 var variable after delcaring ${varVariable}`);
-// try {
-//   console.log(` let variable before delcaring ${helloFromTryCatch}`);
-//   let helloFromTryCatch;
-//   console.log(` let variable after delcaring`, helloFromTryCatch);
-// } catch (e) {
-//   console.log(
-//     `Failed: let variable didn't work becuase it called before delcaring and it will say ReferenceError ${e.name}`,
-//     e,
-//   );
-// }
-// try {
-//   console.log(`const variable before delcaring ${RealityHits}`);
-//   const RealityHits = "Yes it does";
-//   console.log(`const variable after delcaring ${RealityHits}`);
-// } catch (e) {
-//   console.log(
-//     `Failed: const variable didn't work becuase it called before delcaring becuase its a ReferenceError: ${e.name} `,
-//     e,
-//   );
-// }
+console.log(
+  `1 Calling function before delcaring`,
+  canIbeCalled("Yess becuase function have Hoisting"),
+);
+function canIbeCalled(e) {
+  return e;
+}
+console.log(canIbeCalled("Yess becuase function have Hoisting"));
+console.log(`2 var variable before delcaring ${varVariable}`);
+var varVariable;
+console.log(`3 var variable after delcaring ${varVariable}`);
+try {
+  console.log(` let variable before delcaring ${helloFromTryCatch}`);
+  let helloFromTryCatch;
+  console.log(` let variable after delcaring`, helloFromTryCatch);
+} catch (e) {
+  console.log(
+    `Failed: let variable didn't work becuase it called before delcaring and it will say ReferenceError ${e.name}`,
+    e,
+  );
+}
+try {
+  console.log(`const variable before delcaring ${RealityHits}`);
+  const RealityHits = "Yes it does";
+  console.log(`const variable after delcaring ${RealityHits}`);
+} catch (e) {
+  console.log(
+    `Failed: const variable didn't work becuase it called before delcaring becuase its a ReferenceError: ${e.name} `,
+    e,
+  );
+}
 // Task 2.1 – Hoisting Reality Check (Completed!)
 
 // Task 2.2 – Call Stack Observation
@@ -222,73 +221,73 @@ const products = [
 // Add one asynchronous operation and observe the diference.
 
 // Create multiple nested function calls that: (Started!)
-// function syncFn1() {
-//   console.log("Sync Func First -start");
-//   syncFn2();
-//   console.log("Sync Func First Ended");
-// }
-// function syncFn2() {
-//   console.log("Sync Func Second Started");
-//   syncFn3();
-//   console.log("Sync Func Second Ended");
-// }
-// function syncFn3(z) {
-//   console.log("Sync Func third Started");
-//   syncFn4();
-//   console.log("Sync third Ended");
-// }
-// function syncFn4() {
-//   console.log("Sync Func forth -Started");
-// }
-// function AsyncFn1() {
-//   console.log("Aysnc func First start");
-//   AsyncFn2();
-//   console.log("Async First Ended");
-// }
-// function AsyncFn2() {
-//   console.log("Async Second Started");
-//   AsyncFn3();
-//   console.log("Async Second Ended");
-// }
-// function AsyncFn3() {
-//   console.log("Async third Started");
-//   setTimeout(() => console.log("Async third Ended"), 500);
-//   AsyncFn4();
-// }
-// function AsyncFn4() {
-//   console.log("Async forth Start");
-// }
-// syncFn1();
-// AsyncFn1();
+function syncFn1() {
+  console.log("Sync Func First -start");
+  syncFn2();
+  console.log("Sync Func First Ended");
+}
+function syncFn2() {
+  console.log("Sync Func Second Started");
+  syncFn3();
+  console.log("Sync Func Second Ended");
+}
+function syncFn3(z) {
+  console.log("Sync Func third Started");
+  syncFn4();
+  console.log("Sync third Ended");
+}
+function syncFn4() {
+  console.log("Sync Func forth -Started");
+}
+function AsyncFn1() {
+  console.log("Aysnc func First start");
+  AsyncFn2();
+  console.log("Async First Ended");
+}
+function AsyncFn2() {
+  console.log("Async Second Started");
+  AsyncFn3();
+  console.log("Async Second Ended");
+}
+function AsyncFn3() {
+  console.log("Async third Started");
+  setTimeout(() => console.log("Async third Ended"), 500);
+  AsyncFn4();
+}
+function AsyncFn4() {
+  console.log("Async forth Start");
+}
+syncFn1();
+AsyncFn1();
 
-// setTimeout(() => {
-//   console.log(`
-//     \n\n
-//     The Exuction:
-// Sync Func Second Started
-// Sync Func third Started
-// Sync Func forth -Started
-// Sync third Ended
-// Sync Func Second Ended
-// Sync Func First Ended
-// For Sync Functions function one Called First and endend back to back
-// Aysnc func First -start
-// Async Second Started
-// Async third Started
-// Async forth Start
-// Async Second Ended
-// Async First Ended
-// The log Data i got
-// First -start
-// Second Started
-// third Started
-// forth -Started
-// third Ended
-// Second Ended
-// First Exist
-// Async third Ended
-// For ASync Functions function one Called FirstFunction first and the last was ended Third Ended Last `);
-// }, 600);
+setTimeout(() => {
+  console.log(`
+    \n\n
+    The Exuction:
+Sync Func Second Started
+Sync Func third Started
+Sync Func forth -Started
+Sync third Ended
+Sync Func Second Ended
+Sync Func First Ended
+For Sync Functions function one Called First and endend back to back
+Aysnc func First -start
+Async Second Started
+Async third Started
+Async forth Start
+Async Second Ended
+Async First Ended
+The log Data i got
+First -start
+Second Started
+third Started
+forth -Started
+third Ended
+Second Ended
+First Exist
+Async third Ended
+For ASync Functions function one Called FirstFunction first and the last was ended Third Ended Last `);
+}, 600);
 
 // Create multiple nested function calls that: (Completed!)
 
@@ -299,33 +298,33 @@ const products = [
 // Change the outer variables after creation and observe results.
 
 // Task 2.3 – Closure Proof(Start!)
-// const CheckCount = () => {
-//   let value = 0;
-//   console.log(`counter initial value ${value}`);
-//   return {
-//     add: (e) => {
-//       console.log(`counter inner value before:${value}, adding ${e} `);
-//       console.log((value += e));
-//       console.log(`counter inner value After adding ${e}, value:${value} `);
-//     },
-//     sub: (e) => {
-//       console.log(`counter inner value before:${value}, sub ${e} `);
-//       console.log((value -= e));
-//       console.log(`counter inner value After sub ${e}, value:${value} `);
-//     },
-//     Multiply: (e) => {
-//       console.log(`counter inner value before:${value} multiple ${e} `);
-//       console.log(value * e);
-//       console.log(`counter inner value After Multiply By ${e} value:${value} `);
-//     },
-//   };
-// };
-// const Fn1 = CheckCount();
-// Fn1.add(2);
-// Fn1.sub(3);
-// const Fn2 = CheckCount();
-// Fn2.add(5);
-// Fn2.Multiply(10);
+const CheckCount = () => {
+  let value = 0;
+  console.log(`counter initial value ${value}`);
+  return {
+    add: (e) => {
+      console.log(`counter inner value before:${value}, adding ${e} `);
+      console.log((value += e));
+      console.log(`counter inner value After adding ${e}, value:${value} `);
+    },
+    sub: (e) => {
+      console.log(`counter inner value before:${value}, sub ${e} `);
+      console.log((value -= e));
+      console.log(`counter inner value After sub ${e}, value:${value} `);
+    },
+    Multiply: (e) => {
+      console.log(`counter inner value before:${value} multiple ${e} `);
+      console.log(value * e);
+      console.log(`counter inner value After Multiply By ${e} value:${value} `);
+    },
+  };
+};
+const Fn1 = CheckCount();
+Fn1.add(2);
+Fn1.sub(3);
+const Fn2 = CheckCount();
+Fn2.add(5);
+Fn2.Multiply(10);
 // Task 2.3 – Closure Proof(Ended!)
 
 // Task 3.1 – Destructuring with Defaults
@@ -335,16 +334,16 @@ const products = [
 // Log results and observe behavior.
 
 // Section 3: Destructuring, Rest & Spread Operators (Start!)
-// const userProfile = {
-//   name: "Salman",
-//   // age: 504,
-//   course: "web & app dev",
-//   // Present: true,
-// };
-// const { name, age = "Not Avalibe", course, Present = "maybe" } = userProfile;
-// console.log(
-//   `Name:${name}, age: ${age}, course: ${course}, Present: ${Present}`,
-// );
+const userProfile = {
+  name: "Salman",
+  // age: 504,
+  course: "web & app dev",
+  // Present: true,
+};
+const { name, age = "Not Avalibe", course, Present = "maybe" } = userProfile;
+console.log(
+  `Name:${name}, age: ${age}, course: ${course}, Present: ${Present}`,
+);
 
 // Section 3: Destructuring, Rest & Spread Operators (End!)
 
@@ -354,13 +353,13 @@ const products = [
 // Processes them meaningfully (not just logging)
 // Demonstrate behavior with diferent argument counts.
 // Task 3.2 – Rest Operator in Functions (Start!)
-// const usingRest = (value, ...num) => {
-//   const double = num.map((e) => e * value);
-//   return double;
-// };
-// console.log(usingRest(2, 2, 4, 5, 6, 7));
-// console.log(usingRest(12, 1));
-// console.log(usingRest(5));
+const usingRest = (value, ...num) => {
+  const double = num.map((e) => e * value);
+  return double;
+};
+console.log(usingRest(2, 2, 4, 5, 6, 7));
+console.log(usingRest(12, 1));
+console.log(usingRest(5));
 
 // Task 3.2 – Rest Operator in Functions (End!)
 
@@ -371,30 +370,30 @@ const products = [
 // Modify nested values and observe efects.
 
 // Task 3.3 – Spread Operator & References (Important)(Start!)
-// const TypeScriptBio = {
-//   name: "TypeScript",
-//   known: {
-//     bestFor: "Type Safty",
-//   },
-//   usedBy: {
-//     Downloads: 10000000000,
-//   },
-// };
+const TypeScriptBio = {
+  name: "TypeScript",
+  known: {
+    bestFor: "Type Safty",
+  },
+  usedBy: {
+    Downloads: 10000000000,
+  },
+};
 
-// const fakeCopy = { ...TypeScriptBio };
-// const directRef = TypeScriptBio;
-// const HardCopy = structuredClone(TypeScriptBio);
+const fakeCopy = { ...TypeScriptBio };
+const directRef = TypeScriptBio;
+const HardCopy = structuredClone(TypeScriptBio);
 
-// console.log(
-//   `Fake Copy Ref using spreed Operator before Changing original`,
-//   fakeCopy,
-// );
-// console.log(`direct Reference variable before Changing original`, directRef);
-// TypeScriptBio.usedBy.Downloads = "100 M";
-// console.log(`Fake Copy after Changing original Ref`, fakeCopy.usedBy);
-// console.log(`HardCopy Ref after Changing original Ref`, HardCopy.usedBy);
-// console.log(`direct Reference after Changing original Ref `, directRef.usedBy);
-// console.log(`original Ref `, TypeScriptBio);
+console.log(
+  `Fake Copy Ref using spreed Operator before Changing original`,
+  fakeCopy,
+);
+console.log(`direct Reference variable before Changing original`, directRef);
+TypeScriptBio.usedBy.Downloads = "100 M";
+console.log(`Fake Copy after Changing original Ref`, fakeCopy.usedBy);
+console.log(`HardCopy Ref after Changing original Ref`, HardCopy.usedBy);
+console.log(`direct Reference after Changing original Ref `, directRef.usedBy);
+console.log(`original Ref `, TypeScriptBio);
 
 // Task 3.3 – Spread Operator & References (Important)(Completed!)
 
